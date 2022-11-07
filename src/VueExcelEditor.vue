@@ -538,7 +538,7 @@ export default {
         this.lazy(() => {
           const setting = this.getSetting()
           if (this.remember) localStorage[window.location.pathname + '.' + this.token] = JSON.stringify(setting)
-          this.$emit('setting', setting)
+          // this.$emit('setting', setting)
         })
       },
       deep: true
@@ -1550,6 +1550,7 @@ export default {
       window.removeEventListener('mouseup', this.colSepMouseUp)
       const setting = this.getSetting()
       if (this.remember) localStorage[window.location.pathname + '.' + this.token] = JSON.stringify(setting)
+      this.setting = setting
       this.$emit('setting', setting)
     },
 
